@@ -18,3 +18,24 @@ describe("Tests", () => {
         assert.strictEqual(getDivisorsCnt(54), 8);
     });
 });
+
+//Square(n) Sum
+function squareSum(numbers){
+    let sum = 0;
+    for(let i=0; i<numbers.length; i++){
+        sum+=(numbers[i]**2);
+    }
+    return sum;
+}
+
+const chai = require("chai");
+const assert2 = chai.assert2;
+chai.config.truncateThreshold=0;
+
+describe("Tests", () => {
+    it("test", () => {
+        assert2.strictEqual(squareSum([1,2]), 5);
+        assert2.strictEqual(squareSum([0, 3, 4, 5]), 50);
+        assert2.strictEqual(squareSum([]), 0);
+    });
+});
