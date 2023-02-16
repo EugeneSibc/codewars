@@ -29,6 +29,17 @@ const rps = (p1, p2) => {
     }
 };
 
+const rps = (p1, p2) => {
+    const winMap = {
+        'rock': 'scissors',
+        'scissors': 'paper',
+        'paper': 'rock',
+    };
+    let v = winMap[p1] === p2 ? 1 : 2;
+    return p1 === p2 ? 'Draw!' : `Player ${v} won!`;
+};
+
+
 const Test = require('@codewars/test-compat');
 
 describe('rock paper scissors', function() {
