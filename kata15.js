@@ -33,3 +33,30 @@ function gooseFilter (birds) {
     var geese = ["African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher"];
     return birds.filter( bird => geese.indexOf(bird) < 0 );
 };
+
+
+//sum of two lowest positive integers
+function sumTwoSmallestNumbers(numbers) {
+    let arr = [];
+    for(let i = 0; i<2; i++){
+        let indx = Number(numbers.indexOf(Math.min(...numbers)));
+        arr.push(numbers[indx]);
+        numbers.splice(indx,1);
+    }
+    return arr.reduce((a,b)=>a+b);
+}
+
+/*
+function sumTwoSmallestNumbers(numbers){
+    numbers = numbers.sort(function(a, b){return a - b; });
+    return numbers[0] + numbers[1];
+};*/
+/*
+function sumTwoSmallestNumbers(numbers) {
+    numbers.sort((a,b) => a - b);
+    return numbers[0] + numbers[1];
+};*/
+/*function sumTwoSmallestNumbers(numbers) {
+    var [ a, b ] = numbers.sort((a, b) => a - b)
+    return a + b
+}*/
