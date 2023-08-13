@@ -10,3 +10,28 @@ describe("zeroFill", function() {
         assert.equal(zeroFuel(100, 50, 1), false);
     });
 });
+________________________________
+var countSheep = function (num){
+    let murmur = '';
+    if(num<1){
+        return murmur;
+    } else {
+        for(let i=1; i<=num; i++){
+            murmur += i + " sheep...";
+        }
+    }
+    return murmur;
+}
+
+const chai = require("chai");
+const assert = chai.assert;
+chai.config.truncateThreshold=0;
+
+describe("Fixed tests", () => {
+    it("Testing for fixed tests", () => {
+        assert.strictEqual(countSheep(0), "");
+        assert.strictEqual(countSheep(1), "1 sheep...");
+        assert.strictEqual(countSheep(2), "1 sheep...2 sheep...");
+        assert.strictEqual(countSheep(3), "1 sheep...2 sheep...3 sheep...");
+    });
+});
