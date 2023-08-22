@@ -43,3 +43,21 @@ describe( "stringToNumber", function(){
         Test.assertEquals(stringToNumber("-7"),  -7)
     });
 });
+____________________________________________
+
+const areaOrPerimeter = function(l , w) {
+    if(l===w){
+        return l*w;
+    }else{
+        return l*2+w*2
+    }
+};
+
+const { assert } = require('chai');
+
+describe("Tests", () => {
+    it("test", () => {
+        assert.strictEqual(areaOrPerimeter(3,  3),  9);
+        assert.strictEqual(areaOrPerimeter(6, 10), 32);
+    });
+});
