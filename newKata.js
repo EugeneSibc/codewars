@@ -61,3 +61,25 @@ describe("Tests", () => {
         assert.strictEqual(areaOrPerimeter(6, 10), 32);
     });
 });
+_______________________________________
+function DNAStrand(dna){
+    let rule = {
+        'A':'T',
+        'C':'G',
+        'G':'C',
+        'T':'A'
+    };
+    let output = '';
+    for(let i=0; i<dna.length; i++){
+        output += rule[dna[i]];
+    }
+    return output;
+}
+
+describe("Basic tests", () => {
+    it("Testing for fixed tests", () => {
+        assert.strictEqual(DNAStrand("AAAA"),"TTTT","String AAAA is")
+        assert.strictEqual(DNAStrand("ATTGC"),"TAACG","String ATTGC is")
+        assert.strictEqual(DNAStrand("GTAT"),"CATA","String GTAT is")
+    })
+})
